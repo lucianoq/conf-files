@@ -1,0 +1,15 @@
+latex = pdflatex
+#latex = lualatex
+
+project = main
+
+pdf	: clean
+	$(latex) $(project).tex
+	bibtex $(project)
+	$(latex) $(project).tex
+	$(latex) $(project).tex
+	evince 2>&1 > /dev/null $(project).pdf &
+
+clean	:
+	  -rm -f *.snm *.nav *.out *.log *.aux *.dvi *.bbl *.blg *.ilg *.toc *.lof *.lot *.idx *.ind *.ps *~
+
