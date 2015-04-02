@@ -10,6 +10,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'    
     alias grep='grep --color'
     alias grepi='grep --color -i'
+    alias ccat='pygmentize -g'
 fi
 
 # some more ls aliases
@@ -65,6 +66,8 @@ alias say='espeak -v it 2> /dev/null'
 function ged() {
 	gedit > /dev/null 2> /dev/null "$@" &
 }
+
+alias subl='subl > /dev/null 2> /dev/null '
 
 alias temp="sensors | grep -e 'Core 0' | sed -e 's/^.*\(\+.*C\)\ .*$/\1/'"
 #alias lamp='sudo service mysql start && sudo service apache2 start'

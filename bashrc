@@ -14,8 +14,9 @@ HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
 
 shopt -s histappend
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export JAVA_HOME=/usr/lib/jvm/default-runtime
 export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+export CHROME_BIN="/usr/bin/google-chrome-stable"
 
 # set PATH so it includes user's private bin if it exists
 #if [ -d "$HOME/bin" ] ; then
