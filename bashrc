@@ -17,6 +17,7 @@ shopt -s histappend
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 export CHROME_BIN="/usr/bin/google-chrome-stable"
+export GOPATH=$HOME/dev/gopath/
 
 # set PATH so it includes user's private bin if it exists
 #if [ -d "$HOME/bin" ] ; then
@@ -80,7 +81,9 @@ fi
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     #PS1="\[\033[36m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
-    PS1="[\t] \[\033[36m\]\u@\h\[\033[m\]:\[\e[33m\]\w\[\e[m\]\$ "
+    #PS1="\n┌ \[\033[1;31m\][\t] \[\033[0;94m\]\u@\h\[\033[m\]:\[\e[1;33m\]\w\[\e[m\]\n└ \$ "
+    #PS1="\n\[\033[1;31m\][\t] \[\033[0;94m\]\u@\h\[\033[m\]: \[\e[1;33m\]\w\[\e[m\]\n→ "
+    PS1="\n\[\033[0;94m\]\u\[\033[m\]:\[\e[1;33m\]\w\[\e[m\] → "
 else
     #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS1='[\t] \u@\h:\w\$ '
@@ -88,14 +91,14 @@ fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="[\t] \[\033[36m\]\u@\h\[\033[m\]:\[\e[33m\]\w\[\e[m\]\$ "
-    #PS1="\[\033[36m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PS1="[\t] \[\033[36m\]\u@\h\[\033[m\]:\[\e[33m\]\w\[\e[m\]\$ "
+#    #PS1="\[\033[36m\]\u\[\033[m\]:\[\033[33;1m\]\w\[\033[m\]\$ "
+#    ;;
+#*)
+#    ;;
+#esac
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
