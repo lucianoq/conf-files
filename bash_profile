@@ -1,3 +1,11 @@
-export LANG=it_IT.UTF-8
+# .bash_profile
 
-. ~/.bashrc
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+   . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$HOME/bin:$GOPATH/bin
